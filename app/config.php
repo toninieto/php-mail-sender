@@ -14,25 +14,75 @@
         * Defines the destination address where the emails will be sent
         * @const  GES_DESTINATION_ADDRESS
         */    
-        define("GES_DESTINATION_ADDRESS", "test@email.com");
+        define("GES_FROM_ADDRESS", "TONI@TRESIPUNT.COM");
+
+        /**
+        * Defines the destination address where the emails will be sent
+        * @const  GES_DESTINATION_ADDRESS
+        */    
+        define("GES_FROM_REPLYTO", "TONI@TRESIPUNT.COM");
+
+
+
+        /**
+        * Defines the destination address where the emails will be sent
+        * @const  GES_DESTINATION_ADDRESS
+        */    
+        define("GES_FROM_NAME", "Toni");
+
+        /**
+        * Defines the destination address where the emails will be sent
+        * @const  GES_DESTINATION_ADDRESS
+        */    
+        define("GES_DESTINATION_ADDRESS", "DESARROLLO4.IECISA@GMAIL.COM");
+
+        /**
+        * Defines the interval in what the e-mails will be sent
+        * @const  GES_SEND_INTERVAL
+        */    
+        define("GES_HTML_FORMAT", true);
+
+        /**
+        * Defines the interval in what the e-mails will be sent
+        * @const  GES_SEND_INTERVAL
+        */    
+        define("GES_SEND_INTERVAL", "2");
 
         /**
         * Defines the smtp server
         * @const  GES_SMTP_SERVER
         */    
-        define("GES_SMTP_SERVER", "");
+        define("GES_SMTP_SERVER", "SMTP.GMAIL.COM");
 
         /**
         * Defines the smtp port
         * @const  GES_SMTP_PORT
         */    
-        define("GES_SMTP_PORT", "");
+        define("GES_SMTP_PORT", "465");
+
+        /**
+        * Defines the smtp port
+        * @const  GES_SMTP_PORT
+        */    
+        define("GES_SMTP_SECURE", "ssl");
+
+        /**
+        * Defines the smtp port
+        * @const  GES_SMTP_PORT
+        */    
+        define("GES_SMTP_DEBUG", 1);
+
+        /**
+        * Defines the smtp port
+        * @const  GES_SMTP_PORT
+        */    
+        define("GES_SMTP_AUTH", true);
 
         /**
         * Defines the smtp user
         * @const  GES_SMTP_USER
         */    
-        define("GES_SMTP_USER", "");
+        define("GES_SMTP_USER", "TONI@TRESIPUNT.COM");
 
         /**
         * Defines the smtp user
@@ -51,10 +101,60 @@
         */    
         define("GES_EMAIL_BR", "<br />");
         
-        /**
-        * Defines the email text for english 1
-        * @const  GES_EMAIL_EN_1
-        */    
+
+        $GLOBALS["GES_EMAILS"] = array(
+                                        "en" => array( // English e-mails
+                                                        "subject" => array(
+                                                                              0 => "Subject 1",
+                                                                              1 => "Subject 2",
+                                                                              2 => "Subject 3",
+                                                                              3 => "Subject 4",
+                                                                              4 => "Subject 5"
+                                                                            ),
+                                                        "body"   => array(
+                                                                              0 => "Body 1",
+                                                                              1 => "Body 2",
+                                                                              2 => "Body 3",
+                                                                              3 => "Body 4",
+                                                                              4 => "Body 5"
+                                                                         )
+                                                     ),
+                                        "es" => array( // Spanish e-mails
+                                                        "subject" => array(
+                                                                              0 => "Asunto 1",
+                                                                              1 => "Asunto 2",
+                                                                              2 => "Asunto 3",
+                                                                              3 => "Asunto 4",
+                                                                              4 => "Asunto 5"
+                                                                            ),
+                                                        "body"   => array(
+                                                                              0 => "Cuerpo 1",
+                                                                              1 => "Cuerpo 2",
+                                                                              2 => "Cuerpo 3",
+                                                                              3 => "Cuerpo 4",
+                                                                              4 => "Cuerpo 5"
+                                                                         )
+                                                     ),
+                                        "ca" => array( // Catalan e-mails
+                                                        "subject" => array(
+                                                                              0 => "Tema 1",
+                                                                              1 => "Tema 2",
+                                                                              2 => "Tema 3",
+                                                                              3 => "Tema 4",
+                                                                              4 => "Tema 5"
+                                                                            ),
+                                                        "body"   => array(
+                                                                              0 => "Contingut 1",
+                                                                              1 => "Contingut 2",
+                                                                              2 => "Contingut 3",
+                                                                              3 => "Contingut 4",
+                                                                              4 => "Contingut 5"
+                                                                         )
+                                                     )
+                                      );
+
+
+        /*
         define(
                 "GES_EMAIL_EN_1", 
                 "Dear," . GES_EMAIL_BR . GES_EMAIL_BR
@@ -65,10 +165,6 @@
                 . "Thank you for considering me for the customer service advisor position. I look forward to hearing back from you!"
         );
         
-        /**
-        * Defines the email text for spanish 1
-        * @const  GES_EMAIL_ES_1
-        */    
         define(
                 "GES_EMAIL_ES_1",
                 "Estimado Sr." . GES_EMAIL_BR . GES_EMAIL_BR
@@ -79,5 +175,6 @@
                 . "Sin otro particular, le agradezco su atención." . GES_EMAIL_BR
                 . "Reciba un cordial saludo."
         );
+        */
     
 ?>
