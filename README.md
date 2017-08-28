@@ -21,3 +21,7 @@ php composer.phar update
 
 #### Create phpdocumentor documentation
 C:\wamp\www\php-mail-sender\app\vendor\bin\phpdoc -d ./ -t C:\wamp\www\php-mail-sender\opt\docu --ignore vendor/ --template="responsive-twig"
+
+
+#### Third-party credits
+The front-end form is designed by colorlib: [Colorlib](https://colorlib.com)
