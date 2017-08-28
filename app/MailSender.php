@@ -21,7 +21,7 @@
          * This function gets a random language from all the languages available
          */
         public function getRandomLang() {
-            return array_rand( $GLOBALS["EM_EMAILS"], 1 );
+            return array_rand( $GLOBALS["EM_LANGS"], 1 );
         }
 
 
@@ -36,12 +36,12 @@
             $lang = $this->getRandomLang();
 
             // Given a random lang code, we get the number of subjects and bodies available
-            $numSubjects = count( $GLOBALS["EM_EMAILS"][$lang]["subject"] ) - 1;
-            $numBodies = count( $GLOBALS["EM_EMAILS"][$lang]["body"] ) - 1;
+            $numSubjects = count( $GLOBALS["EM_SUBJECT"][$lang] ) - 1;
+            $numBodies = count( $GLOBALS["EM_BODY"][$lang] ) - 1;
 
             // We build the e-mail text
-            $mailText["subject"] = $GLOBALS["EM_EMAILS"][$lang]["subject"][ mt_rand(0, $numSubjects) ];
-            $mailText["body"]    = $GLOBALS["EM_EMAILS"][$lang]["body"][ mt_rand(0, $numBodies) ];
+            $mailText["subject"] = $GLOBALS["EM_SUBJECT"][$lang][ mt_rand(0, $numSubjects) ];
+            $mailText["body"]    = $GLOBALS["EM_BODY"][$lang][ mt_rand(0, $numBodies) ];
 
             return $mailText;
 
@@ -120,12 +120,16 @@
             }
 
 
-            if( !$mail->send() ) {
-                $result["response"] = "ERROR: " . $mail->ErrorInfo;
-            }
-            else {
-                $result["result"] = true;
-                $result["response"] = "OK";
+            if ( GS_SEND_EMAILS_ENABLED ) {
+
+                if( !$mail->send() ) {
+                    $result["response"] = "ERROR: " . $mail->ErrorInfo;
+                }
+                else {
+                    $result["result"] = true;
+                    $result["response"] = "OK";
+                }
+
             }
 
             return $result;        
@@ -136,7 +140,7 @@
          * This function sends an e-mail every seconds (determined by the config parameter GS_SEND_INTERVAL)
          */
         public function sendEmails() {
-            
+
             $mailsCounter = 0;
             $results = array();
             while ( $mailsCounter < GS_NUM_MAILS_TO_SEND ) {
