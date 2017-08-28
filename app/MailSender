@@ -1,0 +1,65 @@
+<?php
+
+    /**
+     * This library it's used for to interact with Confluence. It's created from scratch. It uses the authentication method of this Jira API: https://github.com/FayP/JIRA-php
+     */
+    require_once dirname(__FILE__).'vendor/autoload.php';
+    require_once dirname(__FILE__).'config.php';
+
+    /**
+     * The class MailSender contains the required methods for to send the e-mails to the destination address
+     */
+    class MailSender
+    {
+        /**
+         * The class constructor
+         */
+        public function __construct()
+        {
+            
+        }
+        
+
+        /**
+         * Given a page ID, we get all the data of the page
+         * @param string $location containing the space's location. It can be internal or external
+         * @param string $pageID containing the page ID
+         * @param string $args containing the args for the Curl Call
+         * @return object with all the page data
+         */
+        public function getPageContent($location = CFS_DEFAULT_LOCATION, $pageID, $args = "?expand=body.storage,version")
+        {
+            $general = new \TresiPunt\General\General();
+            
+            $curlResponse = $general->executeCurlCall($location, "GET", "content", $args, $pageID, "");
+            return $curlResponse;
+        }
+        
+        /**
+         * Given a page ID, return the current version or new version of the page
+         * @param string $location containing the space's location. It can be internal or external
+         * @param string page ID containing the page ID
+         * @param string type containing "current" or "new" depending of we want the current or new version number
+         * @return integer with the page version
+         */
+        public function getPageVersion($location = CFS_DEFAULT_LOCATION, $pageID, $type)
+        {
+            $version = "";
+            
+            $page = $this->getPageContent($location, $pageID, "?expand=version");
+            $page = $page["response"];
+            
+            if (isset($page->version->number))
+            {
+                $version = $page->version->number;
+                
+                if ($type == "new")
+                {
+                    $version = $version + 1;
+                }
+            }
+            
+            return $version;
+        }
+        
+    }
