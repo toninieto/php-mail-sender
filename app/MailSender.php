@@ -48,6 +48,44 @@
         }
 
         /**
+         * This function determines randomly if the mail must have an attachment or not. With this 
+         * simple approach, we try that the function returns true about 30% of times
+         */
+        public function mustAddAttachment() {
+
+            $result = array( 
+                             0 => true, 
+                             1 => true,
+                             2 => true,
+                             3 => false,
+                             4 => false,
+                             5 => false,
+                             6 => false,
+                             7 => false,
+                             8 => false,
+                             9 => false
+                            );
+
+            return $result[ mt_rand( 0, count($result) -1 ) ];
+
+        }
+
+
+        /**
+         * This function gets a random attachment from the given relative path
+         */
+        public function getRandomAttachment( $path = GS_ATTACHMENT_PATH ) {
+
+            $files = scandir( realpath( $path ) );
+
+            $numFiles = count( $files ) - 1;
+            $fileID = mt_rand( 2, $numFiles ); // We start at 2 because the two first results that returns scandir are "." and ".."
+
+            return $files[$fileID];
+        
+        }
+
+        /**
          * This function sends the individual mails
          */
         public function sendEmail() {
@@ -68,26 +106,27 @@
             $mail->Username = GS_SMTP_USER;
             $mail->Password = GS_SMTP_PASSWORD;
             $mail->SetFrom( GS_SMTP_USER );
+            $mail->AddAddress( GS_DESTINATION_ADDRESS );
 
             $mailText = $this->getRandomEmailText();
             $mail->Subject = $mailText["subject"];
             $mail->Body = $mailText["body"];
 
-            print "<br/><br/>depurar subject: ";
-            print $mail->Subject;
-            print "<br/>depurar body: ";
-            print $mail->Body;
+            $mustAddAttachment = $this->mustAddAttachment();
 
-            $mail->AddAddress( GS_DESTINATION_ADDRESS );
+            if ( $mustAddAttachment ) {
+                $attachment = $this->getRandomAttachment( GS_ATTACHMENT_PATH );
+                $mail->addAttachment( GS_ATTACHMENT_PATH . $attachment);
+            }
 
-            /*
+
             if( !$mail->send() ) {
                 $result["response"] = "ERROR: " . $mail->ErrorInfo;
             }
             else {
                 $result["result"] = true;
                 $result["response"] = "OK";
-            }*/
+            }
 
             return $result;        
         }

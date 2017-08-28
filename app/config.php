@@ -46,13 +46,13 @@
         * Defines the interval in what the e-mails will be sent
         * @const  GS_SEND_INTERVAL
         */    
-        define("GS_SEND_INTERVAL", 1);
+        define("GS_SEND_INTERVAL", 5);
 
         /**
         * Defines the interval in what the e-mails will be sent
         * @const  GS_SEND_INTERVAL
         */    
-        define("GS_NUM_MAILS_TO_SEND", 20);
+        define("GS_NUM_MAILS_TO_SEND", 5); // In case you want to send e-mails from/to GMAIL accounts, you must respect the limits specified in this page: https://support.google.com/a/answer/1366776?hl=es
 
         /**
         * Defines the smtp server
@@ -94,7 +94,7 @@
         * Defines the smtp user
         * @const  GS_DESTINATION_ADDRESS
         */    
-        define("GS_SMTP_PASSWORD", "XXXX");
+        define("GS_SMTP_PASSWORD", "");
 
 
         /**
@@ -102,6 +102,12 @@
         * @const  GS_DESTINATION_ADDRESS
         */    
         define("GS_BR", "<br />");
+        
+        /**
+        * Defines the destination address where the emails will be sent
+        * @const  GS_DESTINATION_ADDRESS
+        */    
+        define("GS_ATTACHMENT_PATH", "../opt/attachments");
         
 
     /**
