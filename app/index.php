@@ -1,7 +1,7 @@
 <?php
 
     /**
-     * This is the main application file
+     * When loading this file, the sending mail process is fired
      */
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -12,9 +12,9 @@
     $mailSender = new MailSender();
 
     $result = $mailSender->sendEmails();
-    print GES_EMAIL_BR . "The result is: " . GES_EMAIL_BR;
-    var_dump( $result );
-
+    print GS_BR . "The result is: " . GS_BR . "<pre>";
+    print_r( $result );
+    print "</pre>";
 
 
     /**
@@ -26,9 +26,8 @@
      * Handles the exceptions
      * @param exception $e containing the exception object
      */
-    function exceptionHandler($e)
-    {
-        print GES_EMAIL_BR . $exceptionMsg["response"];
+    function exceptionHandler($e) {
+        print GS_BR . $exceptionMsg["response"];
     }
 
 ?>
