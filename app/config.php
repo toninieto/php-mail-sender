@@ -2,8 +2,8 @@
 
     /** 
      * In this file we will define every general setting related to the application
-     * GS_ -> General Settings constants
-     * EML -> Emails constants
+     * GS_ -> General Settings options
+     * EM_ -> Emails constants
      */
 
     /**
@@ -114,65 +114,8 @@
         * @const  GS_DESTINATION_ADDRESS
         */    
         define("GS_ATTACHMENT_PATH", "../opt/attachments");
+
         
-
-    /**
-    * EMAILS
-    */    
-
-        /*
-        $GLOBALS["EM_EMAILS"] = array(
-                                        "en" => array( // English e-mails
-                                                        "subject" => array(
-                                                                              0 => "Subject 1",
-                                                                              1 => "Subject 2",
-                                                                              2 => "Subject 3",
-                                                                              3 => "Subject 4",
-                                                                              4 => "Subject 5"
-                                                                            ),
-                                                        "body"   => array(
-                                                                              0 => "Body 1",
-                                                                              1 => "Body 2",
-                                                                              2 => "Body 3",
-                                                                              3 => "Body 4",
-                                                                              4 => "Body 5"
-                                                                         )
-                                                     ),
-                                        "es" => array( // Spanish e-mails
-                                                        "subject" => array(
-                                                                              0 => "Asunto 1",
-                                                                              1 => "Asunto 2",
-                                                                              2 => "Asunto 3",
-                                                                              3 => "Asunto 4",
-                                                                              4 => "Asunto 5"
-                                                                            ),
-                                                        "body"   => array(
-                                                                              0 => "Cuerpo 1",
-                                                                              1 => "Cuerpo 2",
-                                                                              2 => "Cuerpo 3",
-                                                                              3 => "Cuerpo 4",
-                                                                              4 => "Cuerpo 5"
-                                                                         )
-                                                     ),
-                                        "ca" => array( // Catalan e-mails
-                                                        "subject" => array(
-                                                                              0 => "Tema 1",
-                                                                              1 => "Tema 2",
-                                                                              2 => "Tema 3",
-                                                                              3 => "Tema 4",
-                                                                              4 => "Tema 5"
-                                                                            ),
-                                                        "body"   => array(
-                                                                              0 => "Contingut 1",
-                                                                              1 => "Contingut 2",
-                                                                              2 => "Contingut 3",
-                                                                              3 => "Contingut 4",
-                                                                              4 => "Contingut 5"
-                                                                         )
-                                                     )
-                                      );
-    */
-
 
     /**
     * EMAILS
