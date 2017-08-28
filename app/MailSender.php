@@ -1,8 +1,8 @@
 <?php
 
     // We include all required files
-    require_once dirname(__FILE__).'/vendor/autoload.php';
-    require_once dirname(__FILE__).'/config.php';
+    require_once dirname(__FILE__) . "/vendor/autoload.php";
+    require_once dirname(__FILE__) . "/config.php";
 
     /**
      * The class MailSender contains the required methods for to send the e-mails to the destination address
@@ -12,8 +12,14 @@
         /**
          * The class constructor
          */
-        public function __construct() {
-            
+        public function __construct( $destinationAddress = GS_DESTINATION_ADDRESS, $numEmails = GS_NUM_MAILS_TO_SEND, $interval = GS_SEND_INTERVAL, $server = GS_SMTP_SERVER, $port = GS_SMTP_PORT, $user = GS_SMTP_USER, $password = GS_SMTP_PASSWORD ) {
+            $this->destinationAddress = $destinationAddress;
+            $this->numEmails = $numEmails;
+            $this->interval = $interval;
+            $this->server = $server;
+            $this->port = $port;
+            $this->user = $user;
+            $this->password = $password;
         }
         
 
@@ -96,17 +102,18 @@
 
             // We define all the php mailer required parameters for to send the e-mails
             $mail = new PHPMailer(); // create a new object
+            $mail->CharSet = "UTF-8";
             $mail->IsSMTP(); // enable SMTP
             $mail->SMTPDebug = GS_SMTP_DEBUG; // debugging: 1 = errors and messages, 2 = messages only
             $mail->SMTPAuth = GS_SMTP_AUTH; // authentication enabled
             $mail->SMTPSecure = GS_SMTP_SECURE; // secure transfer enabled REQUIRED for Gmail
-            $mail->Host = GS_SMTP_SERVER;
-            $mail->Port = GS_SMTP_PORT;
+            $mail->Host = $this->server;
+            $mail->Port = $this->port;
+            $mail->Username = $this->user;
+            $mail->Password = $this->password;
             $mail->IsHTML( GS_HTML_FORMAT );
-            $mail->Username = GS_SMTP_USER;
-            $mail->Password = GS_SMTP_PASSWORD;
-            $mail->SetFrom( GS_SMTP_USER );
-            $mail->AddAddress( GS_DESTINATION_ADDRESS );
+            $mail->SetFrom( $this->user );
+            $mail->AddAddress( $this->destinationAddress );
 
             $mailText = $this->getRandomEmailText();
             $mail->Subject = $mailText["subject"];
@@ -116,7 +123,7 @@
 
             if ( $mustAddAttachment ) {
                 $attachment = $this->getRandomAttachment( GS_ATTACHMENT_PATH );
-                $mail->addAttachment( GS_ATTACHMENT_PATH . $attachment);
+                $mail->addAttachment( GS_ATTACHMENT_PATH . "/". $attachment );
             }
 
 
@@ -143,9 +150,10 @@
 
             $mailsCounter = 0;
             $results = array();
-            while ( $mailsCounter < GS_NUM_MAILS_TO_SEND ) {
 
-                sleep( GS_SEND_INTERVAL );
+            while ( $mailsCounter < $this->numEmails ) {
+
+                sleep( $this->interval );
 
                 $result = $this->sendEmail();
                 array_push($results, $result["response"]);

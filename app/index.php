@@ -1,45 +1,63 @@
 <?php
+    /**
+     * This file contains the form that is shown to the user
+     */
+
 
     /**
-     * When loading this file, the sending mail process is fired
+     * We load all the config parameters
      */
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-
-    require_once dirname(__FILE__) . "/MailSender.php";
-
+    require_once dirname(__FILE__) . "/config.php";
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Send mails</title>
+        <title>SEND RANDOM EMAILS IN BATCH MODE TO A SPECIFIC ACCOUNT</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
     <body>
         <div class="container">  
-            <form id="contact" action="" method="post">
-                <h3>Send e-mails library</h3>
+            <form id="contact" action="processForm.php" method="post">
+                <h3>SEND RANDOM EMAILS IN BATCH MODE TO A SPECIFIC ACCOUNT</h3>
                 <h4>Sends a determined numbers of e-mails, combining different parameters, to a specific account</h4>
+                <h4>The most important config parameters are shown below. If you want, change them in this screen and click the Submit button!</h4>
+                <h4>You can change all the application parameters in the config.php file</h4>
+
+                <h5>-- General options --</h5>
                 <fieldset>
-                    <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+                    <label for="destinationaddress">Destination address</label>
+                    <input type="text" name="destinationaddress" id="destinationaddress" tabindex="10" required value="<?php print GS_DESTINATION_ADDRESS; ?>">
                 </fieldset>
                 <fieldset>
-                    <input placeholder="Your Email Address" type="email" tabindex="2" required>
+                    <label for="numemails">Number of e-mails to send</label>
+                    <input type="text" name="numemails" id="numemails" tabindex="20" required autofocus value="<?php print GS_NUM_MAILS_TO_SEND; ?>">
                 </fieldset>
                 <fieldset>
-                    <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+                    <label for="interval">Interval in seconds between e-mails</label>
+                    <input type="text" name="interval" id="interval" tabindex="30" required value="<?php print GS_SEND_INTERVAL; ?>">
+                </fieldset>
+                
+                <h5>-- SMTP parameters --</h5>
+                <fieldset>
+                    <label for="server">Server</label>
+                    <input type="text" name="server" id="server" tabindex="40" required value="<?php print GS_SMTP_SERVER; ?>">
                 </fieldset>
                 <fieldset>
-                    <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
+                    <label for="port">Port</label>
+                    <input type="text" name="port" id="port" tabindex="50" required value="<?php print GS_SMTP_PORT; ?>">
                 </fieldset>
                 <fieldset>
-                    <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+                    <label for="user">User</label>
+                    <input type="text" name="user" id="user" tabindex="60" required value="<?php print GS_SMTP_USER; ?>">
                 </fieldset>
                 <fieldset>
-                    <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                    <label for="password">Password</label>
+                    <input type="text" name="password" id="password" tabindex="70" required value="<?php print GS_SMTP_PASSWORD; ?>">
+                </fieldset>
+                <fieldset>
+                    <button name="submit" type="submit" id="submit" tabindex="80" data-submit="...Sending">Submit</button>
                 </fieldset>
             </form>
         </div>
@@ -50,17 +68,6 @@
 
 
 <?php
-
-
-    $mailSender = new MailSender();
-
-    /*
-    $result = $mailSender->sendEmails();
-    print GS_BR . "The result is: " . GS_BR . "<pre>";
-    print_r( $result );
-    print "</pre>";
-    */
-
 
     /**
      * Exception handling

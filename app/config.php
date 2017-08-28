@@ -1,10 +1,20 @@
 <?php
 
+    /**
+     * We set the required php configuration
+     */    
+    ini_set( 'display_errors', 1 );
+    ini_set( 'display_startup_errors', 1 );
+    error_reporting( E_ALL );
+    ini_set( "max_execution_time", 0 );
+
+
     /** 
      * In this file we will define every general setting related to the application
      * GS_ -> General Settings options
      * EM_ -> Emails constants
      */
+
 
     /**
     * GENERAL SETTINGS
@@ -14,7 +24,7 @@
         * Defines if the sending emails is enabled or not. If not, every parts of the process will be executed, except the sending of the mails. This property is useful for debugging
         * @const  GS_SEND_EMAILS_ENABLED
         */    
-        define("GS_SEND_EMAILS_ENABLED", false);
+        define("GS_SEND_EMAILS_ENABLED", true);
 
         /**
         * Defines the destination address where the emails will be sent
@@ -141,27 +151,27 @@
         // We define the different subjects
         $GLOBALS["EM_SUBJECT"] = array();
         $GLOBALS["EM_SUBJECT"][ $GLOBALS["EM_LANGS"]["EN"] ] = array( // English
-                                                                  0 => "Subject 1",
-                                                                  1 => "Subject 2",
-                                                                  2 => "Subject 3",
-                                                                  3 => "Subject 4",
-                                                                  4 => "Subject 5"
+                                                                  0 => "Bad service complaint",
+                                                                  1 => "Request Inquiry request",
+                                                                  2 => "Contact recovery",
+                                                                  3 => "Sending information",
+                                                                  4 => "Considerations about your application"
                                                                 );
 
         $GLOBALS["EM_SUBJECT"][ $GLOBALS["EM_LANGS"]["ES"] ] = array( // Spanish
-                                                                  0 => "Asunto 1",
-                                                                  1 => "Asunto 2",
-                                                                  2 => "Asunto 3",
-                                                                  3 => "Asunto 4",
-                                                                  4 => "Asunto 5"
+                                                                  0 => "Reclamación por mal servicio",
+                                                                  1 => "Consulta incidencia pedido",
+                                                                  2 => "Recuperación de contacto",
+                                                                  3 => "Envío de información",
+                                                                  4 => "Consideraciones acerca de su solicitud"
                                                                 );
 
         $GLOBALS["EM_SUBJECT"][ $GLOBALS["EM_LANGS"]["CA"] ] = array( // Catalan
-                                                                  0 => "Tema 1",
-                                                                  1 => "Tema 2",
-                                                                  2 => "Tema 3",
-                                                                  3 => "Tema 4",
-                                                                  4 => "Tema 5"
+                                                                  0 => "Reclamació per mal servei",
+                                                                  1 => "Consulta incidència comanda",
+                                                                  2 => "Recuperació de contacte",
+                                                                  3 => "Enviament d'informació",
+                                                                  4 => "Consideracions respecte la seva sol·licitud"
                                                                 );
 
 
@@ -172,7 +182,6 @@
         $GLOBALS["EM_BODY"][ $GLOBALS["EM_LANGS"]["EN"] ][2] = nl2br( file_get_contents( realpath( EM_BODIES_PATH . "/" . $GLOBALS["EM_LANGS"]["EN"] . "/body2.txt" ), true ) );
         $GLOBALS["EM_BODY"][ $GLOBALS["EM_LANGS"]["EN"] ][3] = nl2br( file_get_contents( realpath( EM_BODIES_PATH . "/" . $GLOBALS["EM_LANGS"]["EN"] . "/body3.txt" ), true ) );
         $GLOBALS["EM_BODY"][ $GLOBALS["EM_LANGS"]["EN"] ][4] = nl2br( file_get_contents( realpath( EM_BODIES_PATH . "/" . $GLOBALS["EM_LANGS"]["EN"] . "/body4.txt" ), true ) );
-
 
         // Spanish
         $GLOBALS["EM_BODY"][ $GLOBALS["EM_LANGS"]["ES"] ][0] = nl2br( file_get_contents( realpath( EM_BODIES_PATH . "/" . $GLOBALS["EM_LANGS"]["ES"] . "/body0.txt" ), true ) );

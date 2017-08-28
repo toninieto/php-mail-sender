@@ -8,6 +8,10 @@ I needed to test the performance of a gmail account that contains a lot of email
 
 ### Additional information
 
+#### Dependencies
+1) PHPMailer
+2) PHPDocumentor
+
 #### Installation
 
 1) Clone the project
