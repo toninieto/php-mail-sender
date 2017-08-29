@@ -30,13 +30,13 @@
         * Defines the destination address where the emails will be sent
         * @const  GS_DESTINATION_ADDRESS
         */    
-        define("GS_FROM_ADDRESS", "TONI@TRESIPUNT.COM");
+        define("GS_FROM_ADDRESS", "FROM@EMAIL.COM");
 
         /**
         * Defines the destination address where the emails will be sent
         * @const  GS_DESTINATION_ADDRESS
         */    
-        define("GS_FROM_REPLYTO", "TONI@TRESIPUNT.COM");
+        define("GS_FROM_REPLYTO", "FROM@EMAIL.COM");
 
 
 
@@ -50,7 +50,7 @@
         * Defines the destination address where the emails will be sent
         * @const  GS_DESTINATION_ADDRESS
         */    
-        define("GS_DESTINATION_ADDRESS", "DESARROLLO4.IECISA@GMAIL.COM");
+        define("GS_DESTINATION_ADDRESS", "TO@EMAIL.COM");
 
         /**
         * Defines the interval in what the e-mails will be sent
