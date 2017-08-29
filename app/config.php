@@ -22,13 +22,13 @@
 
         /**
         * Defines if the sending emails is enabled or not. If not, every parts of the process will be executed, except the sending of the mails. This property is useful for debugging
-        * @const  GS_SEND_EMAILS_ENABLED
+        * @const GS_SEND_EMAILS_ENABLED
         */    
         define("GS_SEND_EMAILS_ENABLED", true);
 
         /**
-        * Defines the destination address where the emails will be sent
-        * @const  GS_DESTINATION_ADDRESS
+        * Defines the from address
+        * @const  GS_FROM_ADDRESS
         */    
         define("GS_FROM_ADDRESS", "FROM@EMAIL.COM");
 
@@ -104,7 +104,7 @@
         * Defines the smtp user
         * @const  GS_SMTP_USER
         */    
-        define("GS_SMTP_USER", "TONI@TRESIPUNT.COM");
+        define("GS_SMTP_USER", "USER@EMAIL.COM");
 
         /**
         * Defines the smtp user
