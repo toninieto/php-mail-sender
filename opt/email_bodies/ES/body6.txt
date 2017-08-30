@@ -1,0 +1,12 @@
+Apple ha dado un paso inédito en España al permitir que una operadora de telecomunicaciones gestione los pagos que los usuarios realizan en sus plataformas digitales App Store, iTunes, iBooks y Apple Music. Así, el usuario, en lugar de pagar a Apple, suma el importe a su factura de móvil.
+
+Por ahora, esta función está disponible únicamente para los clientes de Movistar. Para Apple, esto supone renunciar a recoger los datos de tarjetas de crédito de los usuarios. No obstante, esto les permite acceder a una proporción de los usuarios que son reacios a dar sus datos bancarios a un tercero, o a abrirse una cuenta PayPal. Si bien es difícil determinar qué cantidad de usuarios evitaban hacer compras hasta ahora por no disponer de alternativas como la que ahora ofrece Movistar, la preocupación social por la ciberseguridad y la privacidad de los datos personales es creciente.
+
+En Japón, el porcentaje de personas que paga a través del llamado carrier billing (facturación por parte del operador) en Internet es más del doble del que lo hace con tarjeta. Según un estudio de DoCoMo, las operadoras podrían ingresar alrededor de 126.000 millones de euros en 2020 provenientes del comercio electrónico móvil si se superan las actuales barreras para el pago a través de la factura.
+
+A 30 de junio, Movistar contaba con 15,32 millones de líneas móviles y paquetes integrados en España. Apple, por su parte, representa el 8% de las ventas de smartphones en nuestro país, según datos de Kantar Worldpanel (dato de 2016).
+
+Android
+El carrier billing no es algo nuevo en el sector. Las tres grandes compañías en España, Movistar, Vodafone y Orange, ofrecen ya esta opción para compras en la Play Store de Android (Google). Ya en 2013 Movistar llegó a un acuerdo con Microsoft para permitir el cobro de aplicaciones de la tienda Windows Phone en la factura de telefonía móvil.
+
+En 2015, Alsa introdujo la posibilidad de que los clientes que compraran sus billetes a través de Internet pudieran abonar el importe con cargo a su factura de teléfono. Para ello, la empresa de transportes llegó a un acuerdo con el grupo japonés DoCoMo. Tendencia a la que se sumó la pasada primavera la app de parquímetros E-Park, por ejemplo.

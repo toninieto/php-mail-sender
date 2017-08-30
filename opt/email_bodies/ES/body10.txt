@@ -1,0 +1,13 @@
+Las dos compañías han llegado a un acuerdo inédito por el cual los usuarios podrán acceder a Alexa (Amazon) a través de Cortana (Microsoft), y viceversa. Estará disponible a finales de año.
+
+Para que una tecnología progrese y avance al ritmo que exige el mercado, es fundamental la colaboración entre empresas. Amazon y Microsoft han aceptado este hecho y han firmado un acuerdo inédito en el ámbito de los asistentes inteligentes.
+
+Disponible a finales de este año, esta colaboración permitirá acceder a Alexa a través de Cortana en PCs con Windows 10, seguidos de Android y iOS en el futuro. De manera inversa, también se podrá acceder a Cortana a través de dispositivos Alexa como Amazon Echo, Echo Dot y Echo Show.
+
+¿Qué permitirá esta alianza? "Hablo con Cortana cada día (en casa, en el trabajo, en la calle), para tener información sobre mi día, marcar recordatorios para no olvidar nada y para resolver mis dudas. Pero no solamente utilizo un único asistente digital. También suelo hablar con Alexa para escuchar audio libros o añadir cosas a mi lista de la compra", explican desde Microsoft.
+
+"¿Qué ocurre si estás preparando el desayuno y quieres saber si te da tiempo hacer la colada antes de irte a trabajar? En tu dispositivo Alexa, puedes decir 'Alexa, abre Cortana' y preguntar cuando es tu primera reunión. Si no te da tiempo, simplemente vuelve a pedir a Alexa que abra Cortana y que te recuerde recoger la ropa tras el trabajo", continúan.
+
+Los usuarios de Cortana serán capaces de tener la tienda Amazon.com donde Alexa podrá gestionar sus pedidos, así como acceder a distintas herramientas de terceros disponibles simplemente pidiendo a Cortana que abra Alexa. Del mismo modo, los usuarios de Alexa tendrán acceso a todo el conocimiento mundial de Cortana, así como funciones para ayudar en la productividad como gestión de calendario, vista de tareas del día y recordatorios basados en ubicación simplemente pidiendo a Alexa que abra Cortana.
+
+"Asegurarnos de que Cortana está disponible para todos nuestros clientes en cualquier sitio a través de cualquier dispositivo es una prioridad clave para nosotros. Llevar el conocimiento de Cortana, la integración con Office 365 y los compromisos y recordatorios a Alexa es un gran paso hacia adelante en ese objetivo", asegura el CEO de Microsoft, Satya Nadella, en el comunicado emitido por Amazon.

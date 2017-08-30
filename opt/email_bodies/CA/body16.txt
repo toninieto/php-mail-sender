@@ -1,0 +1,20 @@
+Quatre firmes tecnològiques amb seu a Sabadell, Barcelona i Madrid han desenvolupat i patentat SafeUser, un innovador i senzill mètode per reduir el risc dels ciberatacs als sistemes informàtics de les empreses. Es tracta d'un curs d'entrenament en línia dirigit als usuaris que permeti reduir els riscos relacionats amb la gestió dels anomenats correus maliciosos o les ciberamenaces que suposen programes informàtics com el conegut Wanna Cry, un ‘ransomware’ que bloqueja els ordinadors, encripta el contingut i exigeix que es pagui telemàticament un rescat a canvi d'alliberar el sistema informàtic.
+
+SafeUser és una iniciativa de les companyies TechClass Academy, Microblau/Colt, The Security Sentinel i Elium Advanced Technology Education i s'ha creat arran de la necessitat de reforçar la seguretat dels sistemes informàtics corporatius, cada vegada més vulnerables a l'acció dels anomenats softwares malintencionats que s'infiltrin en la xarxa amb l'objectiu de danyar els sistemes d'informació.
+
+“Si bé els populars antivirus o tallafocs han aconseguit limitar els ciberatacs, el cert és que els hackers han descobert un punt feble per infiltrar-se en les xarxes, que és el compte o perfil de cada usuari”, assegura Antonio Herrera, director general de TechClass Academy, que afirma que aquestes amenaces són capaces de traspassar els sistemes de seguretat i que els usuaris són “l'última barrera”. En aquest sentit, apunta que el “factor humà és vital per garantir la seguretat dels sistemes informàtics corporatius”.
+
+A través d'un aparentment inofensiu correu electrònic, els pirates informàtics poden penetrar al sistema d'una empresa i accedir a tota la seva informació i la dels seus clients. Per això, l'única via per reforçar la seguretat és ampliar els coneixements i les habilitats dels usuaris sobre la gestió dels e-mails sospitosos i les ciberamenaces.
+
+En aquest sentit, el curs interactiu que ofereix el mètode SafeUser “permet entrenar aquests usuaris d'informàtica de gestió perquè detectin quins correus poden suposar amenaces i sàpiguen què fer quan es troben en aquesta situació”, apunta Herrera.
+
+ELS SENYALS D'ALERTA
+Herrera explica que alguns dels aspectes que s'han de tenir en compte abans d'obrir un correu electrònic és la procedència d'aquest. “Fa falta mirar si ve d'una entitat o persona coneguda”, comenta el director general de TechClass Academy, que assenyala que a vegades encara que el correu electrònic procedeixi d'un remitent aparentment segur fa falta anar al compte perquè “poden donar-se suplantacions d'identitat”.
+
+En aquesta línia, alerta que el contingut de l'e-mail també és important. “Hem d'anar amb molta cura amb els fitxers adjunts que obrim i les direccions que hi apareixen”, remarca Herrera que afegeix que "generalment el problema no és el correu en si mateix, sinó els fitxers annexos o els enllaços que hi ha al seu interior i que a vegades demanen dades d'accés al sistema, que malgrat que puguin semblar que són de veritat, en realitat pretenen robar informació per entrar".
+
+El curs s'adapta a tot tipus d'empreses sense límit de treballadors, es realitza en línia i té una durada de només 20 minuts. Al final del curs, cada usuari se sotmet a una avaluació de coneixements adquirits a través de la qual l'empresa pot saber si l'ha superat amb èxit i el nivell aconseguit.
+
+El curs ja s'ha començat a comercialitzar a Espanya, on actualment hi ha més de 60.000 companyies vulnerables als ciberatacs. Des de la seva posada en marxa fa prop d'un mes, ja hi ha diverses empreses que han contractat el servei.
+
+TechClass Academy és una empresa tecnològica amb seu a Sabadell que recull l'experiència de diverses persones que fa més de 20 anys que treballen en el món de la formació tecnològica. El seu principal objectiu és desenvolupar continguts d'aprenentatge en línia.
