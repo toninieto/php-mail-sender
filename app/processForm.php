@@ -10,6 +10,22 @@
     require_once dirname(__FILE__) . "/MailSender.php";
     require_once dirname(__FILE__) . "/config.php";
 
+
+    $fromAddress = "";
+    if ( isset($_POST["fromaddress"]) && trim($_POST["fromaddress"]) !== "" ) {
+        $fromAddress = $_POST["fromaddress"];
+    }
+
+    $replytoAddress = "";
+    if ( isset($_POST["replytoaddress"]) && trim($_POST["replytoaddress"]) !== "" ) {
+        $replytoAddress = $_POST["replytoaddress"];
+    }
+
+    $fromName = "";
+    if ( isset($_POST["fromname"]) && trim($_POST["fromname"]) !== "" ) {
+        $fromName = $_POST["fromname"];
+    }
+
     $destinationAddress = "";
     if ( isset($_POST["destinationaddress"]) && trim($_POST["destinationaddress"]) !== "" ) {
         $destinationAddress = $_POST["destinationaddress"];
@@ -46,7 +62,7 @@
     }
     
 
-    $mailSender = new MailSender( $destinationAddress, $numEmails, $interval, $server, $port, $user, $password );
+    $mailSender = new MailSender( $fromAddress, $replytoAddress, $fromName, $destinationAddress, $numEmails, $interval, $server, $port, $user, $password );
 
     $result = $mailSender->sendEmails();
     print GS_BR . "The result is: " . GS_BR . "<pre>";

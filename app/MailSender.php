@@ -12,12 +12,24 @@
         /**
          * The class constructor
          */
-        public function __construct( $destinationAddress = GS_DESTINATION_ADDRESS, $numEmails = GS_NUM_MAILS_TO_SEND, $interval = GS_SEND_INTERVAL, $server = GS_SMTP_SERVER, $port = GS_SMTP_PORT, $user = GS_SMTP_USER, $password = GS_SMTP_PASSWORD ) {
+        public function __construct( $fromAddress = GS_FROM_ADDRESS,
+                                     $replytoAddress = GS_FROM_REPLYTO,
+                                     $fromName = GS_FROM_NAME,
+                                     $destinationAddress = GS_DESTINATION_ADDRESS, 
+                                     $numEmails = GS_NUM_MAILS_TO_SEND, 
+                                     $interval = GS_SEND_INTERVAL, 
+                                     $server = GS_SMTP_SERVER, 
+                                     $port = GS_SMTP_PORT, 
+                                     $user = GS_SMTP_USER, 
+                                     $password = GS_SMTP_PASSWORD ) {
+            $this->fromAddress = $fromAddress;
+            $this->replytoAddress = $replytoAddress;
+            $this->fromName = $fromName;
             $this->destinationAddress = $destinationAddress;
-            $this->numEmails = $numEmails;
-            $this->interval = $interval;
+            $this->numEmails = (int) $numEmails;
+            $this->interval = (int) $interval;
             $this->server = $server;
-            $this->port = $port;
+            $this->port = (int) $port;
             $this->user = $user;
             $this->password = $password;
         }
@@ -112,9 +124,9 @@
             $mail->Username = $this->user;
             $mail->Password = $this->password;
             $mail->IsHTML( GS_HTML_FORMAT );
-            $mail->SetFrom( $this->user );
+            $mail->SetFrom( $this->fromAddress, $this->fromName );
+            $mail->AddReplyTo($this->replytoAddress, $this->fromName);
             $mail->AddAddress( $this->destinationAddress );
-
             $mailText = $this->getRandomEmailText();
             $mail->Subject = $mailText["subject"];
             $mail->Body = $mailText["body"];
@@ -151,15 +163,19 @@
             $mailsCounter = 0;
             $results = array();
 
+            $dateFormat = "Y-M-d h:i:s";
+            print "<strong>The process starts at: </strong>" . gmdate( $dateFormat, time() );
+
             while ( $mailsCounter < $this->numEmails ) {
 
                 sleep( $this->interval );
 
                 $result = $this->sendEmail();
-                array_push($results, $result["response"]);
+                array_push( $results, $result["response"] );
                 $mailsCounter++;
             }
 
+            print "<br/><strong>The process ends at: </strong>" . gmdate( $dateFormat, time() ) . "<br/><br/>";
             return $results;
         }
     }

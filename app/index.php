@@ -27,6 +27,18 @@
 
                 <h5>-- General options --</h5>
                 <fieldset>
+                    <label for="fromaddress">From address</label>
+                    <input type="text" name="fromaddress" id="fromaddress" tabindex="10" required value="<?php print GS_FROM_ADDRESS; ?>">
+                </fieldset>
+                <fieldset>
+                    <label for="replytoaddress">Reply to address</label>
+                    <input type="text" name="replytoaddress" id="replytoaddress" tabindex="10" required value="<?php print GS_FROM_REPLYTO; ?>">
+                </fieldset>
+                <fieldset>
+                    <label for="fromname">From Name</label>
+                    <input type="text" name="fromname" id="fromname" tabindex="10" required value="<?php print GS_FROM_NAME; ?>">
+                </fieldset>
+                <fieldset>
                     <label for="destinationaddress">Destination address</label>
                     <input type="text" name="destinationaddress" id="destinationaddress" tabindex="10" required value="<?php print GS_DESTINATION_ADDRESS; ?>">
                 </fieldset>
